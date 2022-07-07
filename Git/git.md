@@ -79,6 +79,8 @@ ____
   $ git commit -am "commit 메세지 변경"
   $ git push origin master
   ```
+  or `recommend` : 
+  파일, 폴더이름 바꾸고 싶을 때 새로운 폴더 파일 생성 후 다시 commit 후 push
 
   : **commit한 폴더이름 바꾸고 싶을 때**
 
