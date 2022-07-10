@@ -1,0 +1,316 @@
+# 마크다운(Markdown)
+
+> *Typora를 중심으로 작성*
+
+```2004년 존 그루버가 만든 텍스트 기반의 가벼운 마크업 언어(ex. html, etc.)```
+
+- *Github* 등의 사이트는 파일명이 README.md인 것을 확인 가능
+  - 오픈 소스의 공식 문서 작성, 개인 프로젝트의 프로젝트 소개서 활용
+  - 모든 페이지 README.md 넣어 문서를 바로 볼 수 있도록 활용
+  - Github에는 적용되지 않는 마크다운 문법들도 존재
+
+> **마크다운 에디터**
+
+- [Typora](https://typora.io/)
+
+- [Mark Text](https://github.com/marktext/marktext) (M1에는 설치이슈 있음)
+
+- [StackEdit](https://stackedit.io/app#)
+
+- [VS Code](https://code.visualstudio.com/download)
+
+  - [VS Code MarkDown Plugin](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+
+  - [VS CODE MarkDown Plugin Github](https://github.com/yzhang-gh/vscode-markdown)
+
+***
+
+<details>
+<summary>🔓마크다운 문법 목차</summary>
+</details>
+
+
+> 빠르게 내가 원하는 것만 확인 
+
+​	**전반적인 마크다운 가이드** : https://www.markdownguide.org/basic-syntax/
+
+​	**velog.io에서 보기** : https://velog.io/@wdahlia/markdown
+
+- [제목(HEAD)](#제목heading)
+- [목록](#list)
+- [Fenced Code Block](#fenced-code-block)
+- [Inline Code Block](#inline-code-block)
+- [링크(Link)](#link)
+- [이미지](#이미지)
+- [인용문](#blockquotes인용문)
+- [표](#table표)
+- [text 강조](#text-강조)
+- [수평선](#수평선)
+- [마크다운 포맷 무시하기](#마크다운-포맷-무시하기)
+- [토글사용](#토글접기펼치기사용)
+- [동일 파일 내에서 문단 이동](#동일-파일-내에서의-head로-이동-링크)
+- [체크박스](#check-box)
+- [폰트 색상](#폰트-색상)
+
+​	> **레퍼런스** : [참고 링크](#참고-링크)
+
+___
+
+### ✅  마크다운 문법
+
+## `제목(Heading)`
+
+>  문서의 제목이나 소제목으로 사용
+
+- #의 개수에 따라 h1 ~ h6까지 표현 가능
+- #을 쓰고 반드시 `띄어쓰기` 한 후 문자열 입력
+
+|        Markdown        |                       Rendered Output                        |
+| :--------------------: | :----------------------------------------------------------: |
+|   # Heading level 1    | ![스크린샷 2022-07-05 11.48.59](https://user-images.githubusercontent.com/108653518/177483731-7d3621a1-77bd-4c52-8c93-4ece802f1bd6.png) |
+|   ## Heading level 2   | ![스크린샷 2022-07-05 11.49.40-6989385](https://user-images.githubusercontent.com/108653518/177484820-c221c372-daae-46ad-b5c8-cf1426518340.png) |
+|  ### Heading level 3   | ![스크린샷 2022-07-05 11.50.12-6989415](https://user-images.githubusercontent.com/108653518/177484901-dc25508d-1851-4f58-8b9d-d99e86f21b2f.png) |
+|  #### Heading level 4  | ![스크린샷 2022-07-05 11.50.57-6989461](https://user-images.githubusercontent.com/108653518/177485008-a5f10c24-efd7-4d3f-848e-74774a685b13.png) |
+| ##### Heading level 5  | ![스크린샷 2022-07-05 11.51.18-6989482](https://user-images.githubusercontent.com/108653518/177485121-f9e97d26-6ca2-4a27-9ecf-367b82c1ab1b.png) |
+| ###### Heading level 6 | ![스크린샷 2022-07-05 11.51.45](https://user-images.githubusercontent.com/108653518/177485224-bb622c73-75b6-4095-bbb4-f9104c6e7077.png) |
+
+<br>
+
+## `List`
+
+> 순서가 있는 리스트(ol) / 순서가 없는 리스트(ul)
+
+​	**1. 순서가 있는 리스트** (숫자 + . (마침표) 이용)
+
+|                           Markdown                           |                       Rendered Output                        |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 1. First item  <br />2. Second item  <br />3. Third item <br />4. Fourth item | 1. First item  <br />2. Second item  <br />3. Third item  <br />4. Fourth item |
+
+​	**2. 순서가 없는 리스트** (불릿 리스트는 *,+.- 중 아무 기호나 사용 가능)
+
+|        Markdown         |                       Rendered Output                        |
+| :---------------------: | :----------------------------------------------------------: |
+| - First  <br />- Second | ![스크린샷 2022-07-05 13.04.45-6993888](https://user-images.githubusercontent.com/108653518/177485278-6f5391ab-2bfb-4716-9805-0276d356d6dc.png) |
+
+<br>
+
+## `Fenced Code block`
+
+> backtick 기호 3개 활용 **```**
+
+```python
+>>> print("Hello, world!")
+Hello, world!
+>>>
+```
+
+<br>
+
+## `Inline Code block`
+
+> 코드 블록은 backtick 기호 1개를 인라인에 활용하여 작성 ``기호 사이에 문자열 입려
+
+ex) At the command prompt, type `nano`
+
+<br>
+
+## `Link` 
+
+> link 클릭할때는 ctrl + 클릭임을 명심하자!
+
+- 인라인 링크
+
+   `[네이버](http://www.naver.com)` : [문자열]+(링크) ex) [네이버](http://www.naver.com)
+
+- url 링크
+
+   `<https://www.naver.com>` : <url 링크> ex) <http://www.naver.com>
+
+- 참조 링크
+
+  `[Naver]:http://www.naver.com` : [문자열]:링크 
+
+[naver]:http://www.naver.com	"네이버 주소"
+
+<br>
+
+## `이미지`
+
+- !+[문자열]+(url)을 통해 이미지 사용 가능
+
+- **그림 자체에 링크 걸기** 
+
+  ```
+  [![텍스트](이미지URL이나 경로)](링크URL)
+  ```
+
+- *Github*에 이미지 넣는 방법
+  - issues에 들어가서 넣고 싶은 이미지를 write에 드래그앤드롭으로 추가
+  - 5초정도 기다리면 경로가 나옴
+  - 편집기를 키고 링크를 복사해주면 완료!
+
+<br>
+
+## `Blockquotes(인용문)`
+
+> (>)을 통해 인용문을 작성
+
+<br>
+
+## `Table(표)`
+
+> 본문 - 표 - 표 삽입으로 작성
+
+<br>
+
+## `text 강조`
+
+- **** , ctrl+b - 글씨 **굵게**
+- ** - 글씨 *기울게*
+- ~~ ~~ - 글씨 ~~취소선~~
+- `<u></u>` - 글씨 <u>밑줄</u>
+
+<br>
+
+##  `수평선`
+
+> 3개 이상의 asterrisks(***), dashes(---), or underscores(____)
+
+<br>
+
+##  `마크다운 포맷 무시하기`
+
+> `\`(blackslash)를 원하는 글자 앞에 붙인다.
+
+- 📥  **입력값**
+
+```
+**** - 글씨 **굵게**
+\*\*\*\* - 글씨 \*\*굵게\*\*
+```
+
+- 📤  **출력값**
+   - 글씨 **굵게**
+   - \*\*\*\* - 글씨 \*\*굵게\*\*
+  
+
+<br>
+
+## `토글(접기/펼치기)사용`
+
+- Html의 details태그 이용하면 사용 가능 
+
+- ❌ velog에서는 적용이 불가
+
+  - 📥 **입력값**
+
+    ```
+    <details>
+    	<summary>토글사용</summary>
+    	<div markdown="1">
+    	
+    	본문 내용을 여기에 적습니다
+    	
+    	</div>
+    </details>
+    ```
+
+  - 📤 **출력값**
+
+    <details><summary>토글사용</summary>
+      <div markdown="1">
+        <br>본문 내용을 여기에 적습니다
+        <br>
+      </div>
+    </details>
+
+<br>
+
+##  `동일 파일 내에서의 HEAD로 이동 링크`
+
+> [설명어]\(문단의주소)
+
+```
+[설명어 입력](#설명어-입력)
+
+1. 제목(header)를 복사 붙여넣기
+2. 특수문자 제거
+3. 스페이스를 갯수만큼 '-'로 변경
+4. 대문자 > 소문자로 바꾸기
+ex) 내가 가장 좋아하는것은! Code > #내가-가장-좋아하는것은-code
+```
+
+<br>
+
+##  `check box`
+
+> `-` , `*` , `+` 을 작성 후 `[]`
+>
+> `[+스페이스바+]`는 빈 체크박스, `[x]`는 표시가 된 체크박스( [ 랑 x 사이에 띄어쓰기 안해도 됨)
+>
+> x는 소문자 대문자 상관 없음
+
+- 📤 **출력값**
+
+- [ ] TIL
+
+- [x] TIL
+
+  <br>
+
+## `폰트 색상`
+
+> ***Github*에서 색깔 사용하는 방법**
+
+````diff
+```diff 사용
+- text in red
++ text in green
+! oran
+# gray
+@@text in purple(and bold)@@
+```
+````
+
+> **HTML 이용하여 폰트 색상 표현하는 방법** 
+
+[HTML color names]:(https://www.w3schools.com/colors/colors_names.asp)	"색상 이름 검색 가능"
+
+- **폰트 색상 바꾸는법** : `<span style="color:color name"></span>`
+- **형광펜 효과** : `<span style="background-color:color name"></span>`
+- **색상 + 형광펜 효과** : <br>`<span sytle="color:color name; background-color:color name"></span>`
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+## 참고 링크
+
+> **마크다운 에디터 추천 글** 
+
+- <https://wooncloud.tistory.com/72>
+
+> **마크다운 문법**
+
+- [gnoeyah.log - 마크다운 작성법](https://velog.io/@gnoeyah/velog-%EC%A0%81%EC%9D%91%EA%B8%B0-%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4markdown-%EC%9E%91%EC%84%B1%EB%B2%95)
+- [github.com/kimasill - MarkDown](https://github.com/kimasill/MarkDown/blob/main/README.md)
+
+- [github.com/ihoneymon - how-to-write-by-markdown](https://gist.github.com/ihoneymon/652be052a0727ad59601)
+
+- <https://ansohxxn.github.io/blog/markdown/>
+
+- <https://gist.github.com/ninanung/2b81a5db946c26c98c573e3662a92b62>
+
+- [Findingflow](https://geniewishescometrue.tistory.com/entry/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EA%B4%80%EB%A0%A8-%ED%8C%81-%EA%B8%80-%EC%83%89%EC%83%81-%ED%98%95%EA%B4%91%ED%8E%9C)
