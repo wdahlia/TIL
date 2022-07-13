@@ -1,13 +1,27 @@
 # GitHub 심화 - Branch
 
-[출처](#출처)
-
 > **Branch란?**
 
 - *독립적인 Working Directory*
 - 현재의 버전으로 다른 버전(기존 코드를 clone해와 완전히 새로운 독립 공간을 만듦)을 만들어서 가지를 쳐보는 것
 - 동일한 소스코드를 기반으로 서로 다른 버전을 만들거나, 서로 다른 작업을 할 수 있다.
 - 작업의 용이성, 효율성 극대화
+
+<br>
+
+<details>
+<summary> 🔓 Github 심화 목록 </summary>
+</details>
+
+> 빠르게 내가 원하는 것만 확인
+
+- [Git-flow 전략](#git-flow-전략)
+- [Branch 관련 용어, 명령어](#branch-관련-용어-명령어)
+- [Branch Merge](#branch-merge)
+- [Branch Merge - fast-forward 방식](#branch-merge-\--fast\-forward-방식)
+- [Branch Merge - merge commit](#branch-merge-\--merge-commit)
+- [Feature Branch Workflow / Forking Workflow](#feature-branch-workflow--forking-workflow)
+- [출처](#출처)
 
 <br>
 
@@ -58,7 +72,7 @@
 
 ____
 
-### 1. Branch Merge - fast-forward 방식
+### Branch Merge - fast-forward 방식
 
 <p align ="center"><img width="337" alt="스크린샷 2022-07-09 오후 11 11 05" src="https://user-images.githubusercontent.com/108653518/178109471-5af20b5c-21b5-4cc0-a0cf-3995c6d040f3.png" style="zoom: 67%;" >
 
@@ -90,7 +104,7 @@ ____
 
 <br>
 
-### 2. Branch Merge - merge commit
+### Branch Merge - merge commit
 
 ____
 
@@ -109,7 +123,7 @@ ____
 
 <br>
 
-#### Merge Conflict
+#### > Merge Conflict
 
 - 같은 파일의 같은 곳을 수정 했다면 충돌 발생
 

@@ -28,8 +28,6 @@
 <details>
 <summary>🔓마크다운 문법 목차</summary>
 </details>
-
-
 > 빠르게 내가 원하는 것만 확인 
 
 ​	**전반적인 마크다운 가이드** : https://www.markdownguide.org/basic-syntax/
@@ -192,7 +190,7 @@ ex) At the command prompt, type `nano`
 - 📤  **출력값**
    - 글씨 **굵게**
    - \*\*\*\* - 글씨 \*\*굵게\*\*
-  
+
 
 <br>
 

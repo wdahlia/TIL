@@ -64,6 +64,8 @@ _____
 
 <br>
 
+- `$ git remote -v` : **원격저장소 정보 확인**
+
 - `$ git push origin 브랜치명` : **저장소에 commit 반영하기**
 - `$ git push -u origin 브랜치명` 
   - **-u 옵션은 upstream repository 설정 즉, 한번 설정하면 git push, git pull만 간단하게 쓰면됨**
@@ -87,8 +89,8 @@ _____
 <br>
 
 - `$ find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch` 
+  -  **git add한 파일 status에 확인했을때 ds.store있는 경우 삭제하고 싶을 때 사용 가능**<br>(단, 파일 위치 경로 확인 잘하고 입력해야함 경로 잘못 입력 시 전체 컴퓨터안의 ds.store 지워질 수 있음)
 
-​		: **git add한 파일 status에 확인했을때 ds.store있는 경우 삭제하고 싶을 때 사용 가능**<br>		(단, 파일 위치 경로 확인 잘하고 입력해야함 경로 잘못 입력 시 전체 컴퓨터안의 ds.store 지워질 수 있음)
 
 <br>
 
