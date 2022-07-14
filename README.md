@@ -24,8 +24,8 @@
 |  | `220710` | ✅ Github 프로필<br>✅ 1주차 TIL 정리 | | |
 | **2주차** *Python* | `220711` | ☑️ Python - (1) 정리<br>✅ CodeUp 문제풀기 | 📓[PEP8](https://www.python.org/dev/peps/pep-0008/)<br>📓[Style Guide](https://google.github.io/styleguide/pyguide.html) | 🧨 **gitignore 파일 설정** |
 |  | `220712` | ☑️ Python - (2) 정리<br>✅ Python 실습 문제 풀이 | | |
-|  | `220713` | ✅ Python - (3) 정리<br>✅ Python 실습 문제 풀이 | | |
-|  | `220714` |  | | |
+|  | `220713` | ✅ [Python - (3) 정리](https://github.com/wdahlia/TIL/blob/master/Python%20%EC%A0%95%EB%A6%AC/Python%EC%A0%95%EB%A6%AC_3.md)<br>✅ Python 실습 문제 풀이 | | |
+|  | `220714` | ✅ Python - (4) 정리<br>✅ Python 실습 문제 풀이 | | |
 |  | `220715` | | | |
 
 <br>
