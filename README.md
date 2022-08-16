@@ -33,11 +33,24 @@
 |                        | `220720` | ☑️ Python - (7) 정리                                          |                                                              |                           |
 |                        | `220721` | ☑️ Python - (8) 정리<br>✅ [SWEA 실습](https://github.com/wdahlia/Python-Algorithm/tree/master/SWEA) |                                                              |                           |
 |                        | `220722` | ✅ [PJT 01-05 문제풀이](https://github.com/wdahlia/01-PJT-02/tree/main/3%ED%9A%8C%EC%B0%A8/%EB%A5%98%EC%A7%84%EC%88%99) |                                                              |                           |
-| **4주차** *Algorithm*  | `220725` | ✅ [자료구조 - (1) 정리](https://github.com/wdahlia/TIL/blob/master/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%20%EC%A0%95%EB%A6%AC/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_1.md)<br>✅ [백준 1일차 실습](https://github.com/wdahlia/Python-Algorithm/tree/master/%EB%B0%B1%EC%A4%80) |                                                              |                           |
+| **4주차** *자료구조*   | `220725` | ✅ [자료구조 - (1) 정리](https://github.com/wdahlia/TIL/blob/master/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%20%EC%A0%95%EB%A6%AC/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_1.md)<br>✅ [백준 1일차 실습](https://github.com/wdahlia/Python-Algorithm/tree/master/%EB%B0%B1%EC%A4%80) |                                                              |                           |
 |                        | `220726` | ✅ [자료구조 - (2) 정리](https://github.com/wdahlia/TIL/blob/master/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%20%EC%A0%95%EB%A6%AC/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_2.md)<br>✅ [백준 2일차 실습](https://github.com/wdahlia/Python-Algorithm/tree/master/%EB%B0%B1%EC%A4%80) |                                                              |                           |
 |                        | `220727` | ✅ [자료구조 - (3) 정리](https://github.com/wdahlia/TIL/blob/master/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%20%EC%A0%95%EB%A6%AC/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_3.md)<br>✅ 백준, 프로그래머스 실습 |                                                              |                           |
 |                        | `220728` | ✅ 자료구조 - (4) 정리<br>✅ 백준 실습                         |                                                              |                           |
 |                        | `220729` | ☑️ 모의고사 문제 | | |
+| **5주차** *Algorithm*  | `220801` |  | | |
+|                        | `220802` |  | | |
+|                        | `220803` |  | | |
+|                        | `220804` |  | | |
+|                        | `220805` | ☑️ 모의고사 문제 | | |
+|                        |          |  | | |
+|                        |          |  | | |
+|                        |          |  | | |
+|                        |          |  | | |
+|                        |          |  | | |
+|                        |          |  | | |
+|                        |          |  | | |
+|                        |          |  | | |
 
 <br>
 
