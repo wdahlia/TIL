@@ -46,7 +46,7 @@ is_drinking BOOLEAN NOT NULL
 SELECT COUNT(*) FROM healthcare;
 ```
 
-```
+```sql
 COUNT(*)
 --------
 1000000
@@ -58,7 +58,7 @@ COUNT(*)
 SELECT COUNT(*) FROM healthcare WHERE age <= 10;
 ```
 
-```sqlite
+```sql
 COUNT(*)
 --------
 300442  
@@ -70,7 +70,7 @@ COUNT(*)
 SELECT COUNT(*) FROM healthcare WHERE gender=1;
 ```
 
-```sqlite
+```sql
 COUNT(*)
 --------
 510689  
@@ -78,11 +78,11 @@ COUNT(*)
 
 ### 4. 흡연 수치(smoking)가 3이면서 음주(is_drinking)가 1인 사람의 수를 출력하시오.
 
-```sqlite
+```sql
 SELECT COUNT(*) FROM healthcare WHERE smoking=3 and is_drinking=1;
 ```
 
-```sqlite
+```sql
 COUNT(*)
 --------
 150361 
@@ -90,11 +90,11 @@ COUNT(*)
 
 ### 5. 양쪽 시력이(va_left, va_right) 모두 2.0이상인 사람의 수를 출력하시오.
 
-```sqlite
+```sql
 SELECT COUNT(*) FROM healthcare WHERE va_left>=2.0 and va_right>=2.0;
 ```
 
-```sqlite
+```sql
 COUNT(*)
 --------
 2614    
@@ -102,11 +102,11 @@ COUNT(*)
 
 ### 6. 시도(sido)를 모두 중복 없이 출력하시오.
 
-```sqlite
+```sql
 SELECT DISTINCT sido FROM healthcare;
 ```
 
-```sqlite
+```sql
 sido
 ----
 36  
@@ -136,7 +136,7 @@ sido
 SELECT gender, AVG(height), AVG(weight), AVG(age) FROM healthcare group by gender;
 ```
 
-```sqlite
+```sql
 gender  AVG(height)       AVG(weight)       AVG(age)        
 ------  ----------------  ----------------  ----------------
 1       167.452735422145  69.7131620222875  11.7788007965709
@@ -145,13 +145,14 @@ gender  AVG(height)       AVG(weight)       AVG(age)
 
 ### 2. 키가 180 이상인 사람들을 구하기
 
-```sqlite
+```sql
 SELECT COUNT(*) FROM healthcare WHERE height >= 180;
 ```
 
-```sqlite
+```sql
 COUNT(*)
 --------
 28829   
 ```
 
+<br>
