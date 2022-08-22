@@ -21,7 +21,7 @@ PlaylistId  TrackId
 SELECT * FROM tracks AS B ORDER BY TrackId LIMIT 5;
 ```
 
-![2번문제](README.assets/2번문제.png)
+<img width="1320" alt="2번문제" src="https://user-images.githubusercontent.com/108653518/185889454-042e1185-bce1-478b-85e6-2a88ce847976.png">
 
 ### 3. 각 playlist_track 해당하는 tracks 데이터를 함께 출력하세요.
 
@@ -208,7 +208,7 @@ CustomerId  COUNT(*)
 5           38  
 ```
 
-<img src="README.assets/13번문제.png" alt="13번문제" style="zoom:50%;" />
+<img width="430" alt="13번문제" src="https://user-images.githubusercontent.com/108653518/185889466-acb66721-f329-4b66-8757-6cdb50081213.png">
 
 <br>
 
