@@ -210,5 +210,53 @@ CustomerId  COUNT(*)
 
 <img width="430" alt="13번문제" src="https://user-images.githubusercontent.com/108653518/185889466-acb66721-f329-4b66-8757-6cdb50081213.png">
 
+### 14. 각 customer가 주문한 invoices의 개수, CustomerId 기준 내림차순, 5개
+
+```sql
+```
+
+```sql
+```
+
+### 15. ArtistId, Name, 각 Artist가 낸 tracks의 수 출력, 트랙 수 기준 내림차순, 10개
+
+```sql
+```
+
+```sql
+```
+
+### 16. 각 나라 Country 별 고객의 수를 내림차순으로 출력하세요. LIMIT 5
+
+```sql
+```
+
+```sql
+```
+
+### 17. 각 나라 County 별 주문 건수를 건수 기준으로 내림차순으로 출력하세요. LIMIT 10
+
+```sql
+```
+
+```sql
+```
+
+### 17-1. 각 나라 County 별 주문한 물건 개수를 기준으로 내림차순으로 출력하세요. LIMIT 10
+
+```sql
+```
+
+```sql
+```
+
+### 18. 2010년에 주문한 각 나라 Country 별 주문 건수를 건수를 기준으로 내림차순으로 출력하세요. LIMIT 10
+
+```sql
+```
+
+```sql
+```
+
 <br>
 
