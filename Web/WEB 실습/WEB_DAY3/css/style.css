@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Playfair+Display:wght@800&display=swap');
+
+* {
+  box-sizing : border-box
+}
+
+body {
+  position : relative;
+  font-family: 'Noto Sans KR', sans-serif;
+  min-width: 1280px;
+  color: #333333;
+}
+
+.deco {
+  text-decoration: none;
+  color : rgb(66, 60, 60);
+}
+
+a:hover{
+  color : rgba(249, 246, 242, 0.758);
+}
+
+.nav {
+  position : sticky;
+  top : 0;
+  display : flex;
+  justify-content : space-between;
+  align-items : center;
+  height : 50px;
+  padding : 1rem;
+  letter-spacing : -.7px;
+  border : 0.5px solid rgb(165, 150, 142);
+  background-color: rgba(202, 189, 176, 0.693);
+}
+
+
+.menu {
+  display : flex;
+  margin : 0;
+  padding : 0;
+} 
+
+.item {
+  margin : 0px 10px;
+}
+
+/* .picture{
+  width : 100%;
+} */
+
+.image{
+  width : 100%;
+  height: 700px;
+  background-image: url("../assets/apparel.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.article {
+  align-items : center;
+  display: flex;
+  /* border: 3px solid black; */
+  width: 1280px;
+  justify-content: center;
+  margin : auto;
+  line-height : 30px;
+  flex-wrap : wrap;
+}
+
+.card1 {
+  /* padding: 10px 30px 10px 10px; */
+  width: 45%;
+  justify-content: center;
+}
+
+.img{
+  width: 80%;
+  border-radius: 1rem;
+  padding : 12px;
+  box-shadow: 10px 10px 16px rgba(11, 11, 11, 0.393);
+  margin : 30px;
+}
+
+.card2 {
+  margin : 0;
+  text-align : center;
+  width : 55%;
+}
+
+.company {
+  font-size : 24px;
+  letter-spacing : -2px;
+  font-weight : 900;
+  margin: 40px 40px 0;
+}
+
+.lorem {
+  text-align : left;
+  margin: 50px 40px;
+  letter-spacing : -1px;
+  line-height : 35px;
+  font-size : 17px;
+  color :rgba(117, 109, 102, 0.693)
+}
+
+.card3 {
+  display : flex;
+  flex-direction : column; 
+  width : 100%;
+  margin-bottom : 100px;
+}
+
+.more {
+  text-align : center;
+  letter-spacing : -2px;
+  margin: 30px 0 40px;
+  font-size: 30px;
+  color: rgb(149, 145, 137)
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.icon {
+  text-align: center;
+  padding : 0 30px 0;
+  margin: 0;
+}
+
+/* -- img1 */
+.img1 {
+  margin: 10px 10px 0px;
+  border-radius: 3rem;
+  width: 64px;
+  height: 65px;
+  box-shadow: 5px 5px 10px rgba(117, 109, 102, 0.693)
+}
+
+.email-title {
+  letter-spacing: -1px;
+  font-weight : bolder;
+}
+
+.email {
+  text-decoration: none;
+  letter-spacing: -1px;
+  color: rgb(100, 100, 112);
+  font-weight : bold;
+}
+
+/* img2 */
+
+.img2 {
+  margin: 10px 10px 0px;
+  border-radius: 3rem;
+  width: 64px;
+  height: 65px;
+  box-shadow: 5px 5px 10px rgba(117, 109, 102, 0.693)
+}
+
+.phone-title {
+  letter-spacing: -1px;
+  font-weight : bolder;
+}
+
+.phone {
+  letter-spacing: -1px;
+  color: rgb(100, 100, 112);
+  font-weight : bold;
+}
+
+/* img3 */
+
+.img3 {
+  margin: 10px 10px 0px;
+  border-radius: 3rem;
+  width: 64px;
+  height: 65px;
+  box-shadow: 5px 5px 10px rgba(117, 109, 102, 0.693)
+}
+
+.location-title {
+  letter-spacing: -1px;
+  font-weight : bolder;
+}
+
+.location {
+  letter-spacing: -1px;
+  color: rgb(100, 100, 112);
+  font-weight : bold;
+}
+
+/* img4 */
+.img4 {
+  margin: 10px 10px 0px;
+  border-radius: 3rem;
+  width: 64px;
+  height: 65px;
+  box-shadow: 5px 5px 10px rgba(117, 109, 102, 0.693)
+}
+
+.time-title {
+  letter-spacing: -1px;
+  font-weight : bolder;
+}
+
+.time {
+  letter-spacing: -1px;
+  color: rgb(100, 100, 112);
+  font-weight : bold;
+}
+
+
+.scroll { 
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    background-color: rgba(222, 205, 205, 0.628);
+    box-shadow: 6px 4px 8px rgb(160 155 150 / 69%)
+}
+
+.img7 {
+  margin: 8px 9px;
+  height: 2rem;
+  width: 2rem;
+}
+
+
+/* products.html */
+
+.products-cards {
+  display : flex;
+  margin : 60px auto;
+  flex-wrap : wrap;
+  width : 1280px;
+  justify-content : center;
+}
+
+.product {
+  display : flex;
+  flex-direction: column;
+  width : 25%;
+  border : 2px solid rgb(100, 93, 93);
+  border-radius: 1rem;
+  margin : 10px;
+  box-shadow: 6px 4px 8px rgb(160 155 150 / 69%);
+  background-color: rgba(222, 205, 205, 0.381);
+}
+
+.card-img {
+  padding : 10px;
+  width : 100%;
+  border-radius: 1rem;
+  
+}
+
+.name{
+  text-align: right;
+  font-size: 23px;
+  letter-spacing: -0.5px;
+  color:rgb(95 74 74 / 76%);
+  border-radius: 2rem;
+  font-family: 'Playfair Display', 'wght@800';
+  background-color: #ffffff61; 
+  box-shadow: 2px 2px 1px #b6a79b;
+  padding: 5px 10px 7px;
+  margin: 5px 20px;
+}
+
+.description {
+  text-align : left;
+  font-size : 13px;
+  font-weight: 900;
+  margin : 10px;
+  line-height: 20px;
+  letter-spacing: -.7px;
+}
