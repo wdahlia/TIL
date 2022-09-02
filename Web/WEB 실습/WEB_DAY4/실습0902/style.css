@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Playfair+Display:wght@800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Noto Sans KR", "wght@400;500";
+  height: 1000px;
+}
+
+.header{
+  height: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #fefffe;
+ 
+}
+
+.header-image{
+  height: 60px;
+}
+
+.header-list{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.headerlist{
+  padding: 0 10px;
+}
+
+.background{
+  top: 80px; 
+  height: 320px;
+  background-size: cover;
+  background-image: url('./images/background.jpg'); 
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-fontsize{
+  font-size: 30px;
+  letter-spacing: -.5px;
+}
+
+.board{
+  display: flex;
+  width: 100%
+}
+
+aside{ 
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.189);
+  padding: 1rem;
+  width: 20%
+}
+
+.aside-list{ 
+  list-style: none; 
+  padding-left: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%
+}
+
+.movie {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: rgba(208, 200, 200, 0.885);
+  width: 80%;
+  padding: 24px;
+}
+
+.movie-chart{
+  font-size: 23px;
+  text-align: center;
+  letter-spacing: -1px;
+  font-weight: lighter;
+}
+
+.movie-poster{
+  display: flex;
+  justify-content: center;
+}
+
+.movie-img{
+  margin: 10px;
+  width: 300px;
+  border-radius: 1rem;
+}
+
+.movie-title{
+  text-align:center;
+  padding: 5px 0 0;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: rgb(97, 86, 72);
+  font-size: 17px;
+}
+
+.madeby{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  background-color: black;
+  color: white;
+  width: 100%;
+}

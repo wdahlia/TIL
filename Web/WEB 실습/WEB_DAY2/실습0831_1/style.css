@@ -5,8 +5,29 @@
 
 body {
   font-family : 'Noto Sans KR';
+  margin : 0;
+  height : 1000px
 }
 
+.header{
+  position : sticky;
+  margin : 0;
+  top : 0;
+  left : 0;
+  right : 0;
+  height : 39px;
+  background-color : rgba(242, 239, 234, 0.533);
+  z-index : 1;
+  color : rgb(133, 121, 121);
+  padding: 1rem;
+  letter-spacing : -3px;
+  display : flex;
+}
+
+.headerfont {
+  font-size : 24px;
+  line-height : 39px;
+}
 
 .align-center {
 text-align : center; 
@@ -37,12 +58,12 @@ position : relative;
 .image {
 width : 100%;
 border-radius : 1rem;
-box-shadow : 3px 5px 10px;
+box-shadow : 3px 7px 10px rgb(195, 191, 191);
 }
 
 .tab {
 text-align : left;
-/* margin : 8px 13px 3px; */
+margin : 8px 13px 3px;
 font-weight : bold;
 font-size : 12px;
 color : #575a5d;
@@ -51,14 +72,14 @@ color : #575a5d;
 .guide {
 letter-spacing : -1.4px;
 font-size : 18px;
-/* margin : 3px 13px 0; */
+margin : 3px 13px 0;
 font-weight : 900;
 }
 
 .sentence {
 letter-spacing : -1.6px;
 font-size : 12px;
-/* margin : 10px 13px 0px; */
+margin : 10px 13px 0px;
 color : #93979a;
 font-weight : 900;
 }
@@ -66,15 +87,13 @@ font-weight : 900;
 .sale {
   position : absolute;
   background-color : rgba(219, 203, 203, 0.883);
-  color : white;
   border-radius : 0.5rem;
-  width : 2rem;
-  height : 1rem;
   width: 50px;
   height : 25px;
-  text-align : center;
-  vertical-align : middle;
   top : 20px;
   left : 20px;
-  padding : 3px;
+  display : flex;
+  font-size : 14px;
+  align-content : center;
+  justify-content : center;
 }

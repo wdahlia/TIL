@@ -26,7 +26,6 @@ a:hover{
   top : 0;
   display : flex;
   justify-content : space-between;
-  align-items : center;
   height : 50px;
   padding : 1rem;
   letter-spacing : -.7px;
@@ -77,8 +76,8 @@ a:hover{
 .img{
   width: 80%;
   border-radius: 1rem;
-  padding : 12px;
-  box-shadow: 10px 10px 16px rgba(11, 11, 11, 0.393);
+  /* padding : 12px; */
+  box-shadow: 10px 10px 8px rgba(11, 11, 11, 0.393);
   margin : 30px;
 }
 
@@ -89,7 +88,7 @@ a:hover{
 }
 
 .company {
-  font-size : 24px;
+  font-size : 39px;
   letter-spacing : -2px;
   font-weight : 900;
   margin: 40px 40px 0;
@@ -237,10 +236,11 @@ a:hover{
 
 .products-cards {
   display : flex;
+  /* align-content: flex-start; */
   margin : 60px auto;
   flex-wrap : wrap;
   width : 1280px;
-  justify-content : center;
+  justify-content: center;
 }
 
 .product {
