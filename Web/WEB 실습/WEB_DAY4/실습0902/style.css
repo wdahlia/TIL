@@ -31,6 +31,7 @@ body{
   display: flex;
   justify-content: space-between;
   list-style: none;
+  
   margin: 0;
   padding: 0;
 }
@@ -86,7 +87,7 @@ aside{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  background-color: rgba(208, 200, 200, 0.885);
+  background-color: rgba(227, 150, 150, 0.885);
   width: 80%;
   padding: 24px;
 }
