@@ -1,0 +1,42 @@
+
+.h1-font {
+  font-size : 2rem;
+  letter-spacing : -1px;
+  color : rgb(22, 22, 23);
+}
+
+.email-font {
+  font-size : .8rem;
+  color : whitesmoke;
+}
+
+.email-index {
+  font-size : .8rem;
+  letter-spacing : -1px;
+}
+
+.password-font {
+  font-size : .8rem;
+  color : rgb(80, 79, 78);
+}
+
+.password-index {
+  font-size : .8rem;
+  letter-spacing : -1px;
+}
+
+.profil-font {
+  font-size : .8rem;
+  color: rgb(69, 69, 77);
+}
+
+.check-font {
+  font-size : .95rem;
+  letter-spacing : -.5px;
+  color: rgb(77, 160, 232);
+}
+
+.signup-font {
+  font-size : 1rem;
+  font-weight : 600;
+}
