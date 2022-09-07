@@ -1,0 +1,43 @@
+
+h1 {
+  letter-spacing: -1px;
+  color: rgb(101, 112, 105);
+  font-weight: bolder;
+}
+
+.p-line {
+  line-height: 30px;
+}
+
+.btn-color {
+  color: rgb(88, 95, 88);
+  border: 3px solid rgb(84, 83, 81);
+}
+
+.card-font {
+  color: rgb(255, 255, 254);
+  font-weight: 400;
+  letter-spacing: -.5px;
+  border: none;
+  height: 5rem;
+  border-radius: 1rem;
+}
+
+.item-font {
+  letter-spacing: -.5px;
+}
+
+.border-option {
+  border: 2px solid white;
+  background-color: rgba(99, 104, 98, 0.673);
+}
+
+.footer-font {
+  font-weight: 900;
+  letter-spacing: -.7px;
+}
+
+.card-body p {
+  height: 100px;
+  overflow: scroll;
+}
