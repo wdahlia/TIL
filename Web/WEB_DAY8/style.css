@@ -1,0 +1,105 @@
+
+/* navbar */
+.brand-color {
+  color: #4d4d56;
+  font-weight: 900;
+  letter-spacing: -.5px;
+}
+
+.item-color {
+  color: #4d4d567a;
+}
+
+.shopping-font {
+  font-weight: 600;
+  color: rgb(248, 232, 232);
+  font-size: 14px;
+  background-color: #8d7a8b7e;
+}
+
+.title-font {
+  font-weight: bolder;
+}
+
+.img-size {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 3px;
+}
+
+/* header */
+
+.header-title {
+  font-weight: 900;
+  font-size: 70px;
+}
+
+.header-index {
+  font-weight: lighter;
+  letter-spacing: -.5px;
+  color: whitesmoke;
+}
+
+
+/* footer */
+.footer-font {
+  color: #0e32fc86;
+  font-weight: 900;
+  letter-spacing: -.8px;
+}
+
+/* cards */
+
+.card-shadow {
+  box-shadow: 4px 3px 8px rgb(105, 99, 99);
+  border: 2px solid rgba(0, 0, 0, 0.72);
+}
+
+.card-font {
+  font-weight: 800;
+  color: #4d4d56;
+  letter-spacing: -.8px;
+}
+
+.btn-font {
+  font-weight: 800;
+  letter-spacing: -.5px;
+  border: 2px solid;
+}
+
+
+.origin-font { 
+  color: rgba(128, 128, 128, 0.667);
+}
+
+
+.sale-font {
+  font-weight: 800;
+  letter-spacing: -.6px;
+}
+
+
+
+
+/* shop_page.html css */
+
+.img-border {
+  border: 3px solid rgba(0, 0, 0, 0.72);
+  border-radius: 3rem;
+}
+
+.item-code {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+  color: rgb(135, 123, 123);
+}
+
+.item-name {
+  font-weight: bold;
+  letter-spacing: -.5px;
+}
+
+.item-price {
+  font-size: 21px;
+}
