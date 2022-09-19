@@ -1,0 +1,62 @@
+
+.carousel-items {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 400px;
+  background-color: aliceblue;
+  display: none;
+}
+
+.item-color1 {
+  background-color: rgb(251, 189, 210);
+}
+
+.item-color2 {
+  background-color: rgb(244, 209, 255);
+}
+
+.item-color3 {
+  background-color: rgb(196, 233, 200);
+}
+
+.carousel-btn {
+  width: 100vw;
+  height: 400px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.active {
+  display: block;
+  animation: active 1.5s;
+}
+
+.btn-style {
+  border-radius: 3rem;
+  padding: .5rem 1rem;
+  margin: 0rem 1rem;
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+  color: rgba(11, 7, 6, 0.49);
+}
+
+@keyframes active {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
