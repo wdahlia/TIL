@@ -1,0 +1,24 @@
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.password-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 10rem;
+  background-color: rgba(249, 160, 160, 0.503);
+  border-radius: 2rem;
+  border: 2px solid rgba(40, 24, 24, 0.503)
+}
+
+.btn-flex {
+  display: flex;
+  justify-content: end;
+}
