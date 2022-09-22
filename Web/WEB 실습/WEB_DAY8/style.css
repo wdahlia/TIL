@@ -103,3 +103,9 @@
 .item-price {
   font-size: 21px;
 }
+
+.product-title {
+  color: #4d4d56;
+  font-weight: 900;
+  letter-spacing: -.5px;
+}
