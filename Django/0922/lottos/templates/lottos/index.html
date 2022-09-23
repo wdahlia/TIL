@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lotto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <style>
+    body {
+      width : 100vw;
+      height : 100vh;
+    }
+
+      .container {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .title-text {
+      letter-spacing: -2px;
+      color: rgba(0, 0, 0, 0.614);
+    }
+
+    .btn-style {
+      width: 10rem;
+    }
+
+    .img-box {
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+    }
+
+    .img-size {
+      width: 100%;
+      height: 20rem;
+      border-radius: 2rem;
+      border: 5px solid #000814;
+      box-shadow: 2px 3px 5px rgb(44, 34, 34);
+    }
+
+    .img-sm-size {
+      width: 100%;
+      height: 25rem;
+      border-radius: 2rem;
+      border: 5px solid #000814;
+      box-shadow: 2px 3px 5px rgb(44, 34, 34);
+    }
+
+    .img-lg-size {
+      width: 50rem;
+      height: 30rem;
+      border-radius: 2rem;
+      border: 5px solid #000814;
+      box-shadow: 2px 3px 5px rgb(44, 34, 34);
+    }
+
+    .menu-text {
+      color: rgb(233, 187, 187);
+      border: 2px solid rgb(160, 110, 110);
+      padding: .3rem 1rem;
+    }
+
+    .lotto-text {
+      font-size: xx-large;
+      font-weight: 900;
+      background-color: rgb(233, 187, 187);
+      border-radius: 2rem;
+    }
+
+    .lotto-result {
+      font-size: xx-large;
+    }
+  </style>
+</head>
+<body>
+  <div class="container d-flex flex-column justify-content-center text-center">
+    <div class="row justify-content-center">
+      <h1 class="title-text fw-bold mt-5">랜덤 로또 번호 추첨기</h1>
+      <button class="btn btn-outline-primary btn-style my-2" id="btn">&#128173; 행운의 번호는 ?</button>
+    </div>
+    <div class>
+      {% for winner in whoIsWinner %}
+        {{ winner }} 
+      {% endfor %}
+      + {{ bonus }}
+    </div>
+    <div class="row my-3 justify-content-center">
+        {% for numbers in randomBall %}
+        <div class="col-7 px-0 my-3 lotto-text">
+          {% for number in numbers.0 %}
+            {{ number }}
+          {% endfor %}
+        </div>
+        <div class="col-5 px-0 lotto-result">
+          {% if numbers.1 != 0 %}
+            {{ numbers.1 }}
+          {% else %}
+            낙첨
+          {% endif %}
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+  <script>
+    const btn = document.querySelector('#btn')
+    function reload() {
+      reload = location.reload();
+    }
+    btn.addEventListener('click', reload, true);
+
+    // const lottoNumber = document.querySelector('#lottonum')
+    // function reload() {
+    //   reload = location.reload()
+    // }
+  </script>
+</body>
+</html>
