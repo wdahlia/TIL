@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="bg-light d-flex align-items-center justify-content-center mx-0" style="width:100vw; height:100vh;">
+    <form action="/result">
+      <div class="d-flex flex-column align-items-center">
+        <h1 class="text-success text-opacity-75 fw-bolder mb-3">&#129497; 해리포터 기숙사 랜덤 배정</h1>
+        <img src="https://file3.instiz.net/data/cached_img/upload/2018/06/13/6/cb2216303e032c3f50bb993a88fa4631.gif" style="border-radius: 2rem;">
+        <div class="text-center">
+          <label for="pastlife"><h5 class="fw-ligther my-3 text-secondary">이름을 입력하세요</h5></label>
+        </div>
+        <div class="d-flex">
+          <input type="text" name="p" id="pastlife" class="input-border form-control mx-2">
+          <button type="submit" class="btn btn-outline-success px-0" style="width: 7rem;"><i class="bi bi-pencil-square"></i> 입력</button></div>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}

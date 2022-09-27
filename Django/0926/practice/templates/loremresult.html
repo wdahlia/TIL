@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="size">
+  <div class="fw-light flex-column justify-content-center align-items-center mx-5 my-3">
+    <h1 class="text-center pt-5">Lorem Ipsum</h1>
+    <div class="d-flex justify-content-end mx-3">
+      <a href="/lorem/"><button type="button" class="btn btn-outline-dark mx-1 my-3"><i class="bi bi-arrow-90deg-left"></i></button></a>
+      <button type="button" class="btn btn-outline-dark mx-1 my-3" id="reset"><i class="bi bi-arrow-clockwise"></i></button>
+    </div>
+    {% for lorem in loremlist %}
+      <div class="text-center">
+        {% for e in lorem %}
+          {{ e }}
+        {% endfor %}
+        <hr class="text-dark">
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

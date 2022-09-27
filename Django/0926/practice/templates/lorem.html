@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="bg-light d-flex align-items-center justify-content-center mx-0" style="width:100vw; height:100vh;">
+    <div style="width: 21rem;">
+      <h2 class="text-center mb-3 fw-light" style="letter-spacing: -1px;">&#x1F64F; plz.. make Lorem</h2>
+      <form action="/loremresult">
+        <div class="d-flex justify-content-between py-2">
+          <label for="paragraph" class="text-center fw-light" style="line-height: 2.5">문단의 수</label>
+          <input type="text" id="paragraph" name="paran" class="btn btn-outline-dark" style="border: 1px solid #ced4da; padding: 0.3rem 0.5rem; border-radius: 0.5rem;">
+        </div>
+        <div class="d-flex justify-content-between py-2">
+          <label for="words" class="text-center fw-light" style="line-height: 2.5">문단별 단어의 개수</label>
+          <input type="text" id="words" name="wordn" class="btn btn-outline-dark" style="border: 1px solid #ced4da; padding: 0.3rem 0.5rem; border-radius: 0.5rem;">
+        </div>
+        <div class="d-flex justify-content-between py-2">
+          <span class="fs-6 fw-light text-primary" style="line-height: 2.7;">&#9888; 0 이상의 자연수를 입력해주세요. </span>
+          <input type="submit" class="reset btn btn-outline-primary px-4 py-0">
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

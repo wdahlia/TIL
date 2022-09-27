@@ -19,7 +19,11 @@ from practice import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.main),
     path('number/<int:number>/', views.number),
     path('calculate/<int:firstnum>/<int:secondnum>/', views.calculate),
-    path('pastlife/',views.pastlife),
+    path('hogwart/', views.hogwart),
+    path('result/', views.result),
+    path('lorem/', views.lorem),
+    path('loremresult/', views.loremresult),
 ]

@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-  <form action="/result">
-    <div class="text-center">
-      <label for="pastlife"><h4 class="fw-bolder my-3">이름을 입력해주세요</h4></label>
-    </div>
-    <input type="text" name="p" id="pastlife">
-    <input type="submit">
-  </form>
+<div class="size d-flex flex-column text-center justify-content-center">
+  <h3 class="my-3 fw-bolder"><span>{{ name }}</span> 님의 기숙사는 <span style="color: {{ domitory.1.1 }};" class="fw-bolder">{{ domitory.0 }}</span> 입니다</h3>
+  <div class="d-flex justify-content-center">
+    <img src="{{ domitory.1.0 }}" class="my-3" style="width: 20rem; height: 24rem;"> 
+  </div>
+  <div class="d-flex justify-content-center align-items-center my-3">
+    <a href="/hogwart/"><button class="btn btn-outline-success px-3"><i class="bi bi-backspace"></i> BACK</button></a>
+    <button type="button" class="btn btn-outline-success mx-1 my-3" id="reset"><i class="bi bi-arrow-clockwise"></i></button>
+  </div> 
+</div>
 {% endblock %}
