@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="size bg-light d-flex flex-column justify-content-center">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <div class="row-col-1 m-3">
+      <div class="col">
+        <h1 class="text-center fw-lighter">To-Do List</h1>
+        <hr>
+      </div>
+      <div class="col">
+        <form action="{% url 'Todo:create' %}">
+          <div class="input-group mb-3">
+            <button class="btn btn-outline-success" type="button" for="today">오늘 할 일</button>
+            <input type="text" class="form-control bg-light" name="today" autocomplete="off" required>
+          </div>
+          <div class="input-group mb-3">
+            <button class="btn btn-outline-success" type="button">우선 순위</button>
+            <select class="form-select bg-light" name="priority" required>
+              <option selected></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <button class="btn btn-success">마감 기한</button>
+            <input type="date" class="form-control bg-light" name="date" autocomplete="off" required>
+          </button>
+          <span class="ms-3">
+            <button type="submit" class="btn btn-dark" name="addTodo"><i class="bi bi-plus-circle"></i> Add</button> 
+          </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- view point 휴대폰 화면 크기 정도? -->
+  <div class="m-4 d-block d-md-none">
+    <!-- 그냥 체크박스로 해서 시작 시기, 마감 기한, 체크 항목 정도로 바꾸기 -->
+    <!-- form check 말고 따로 checkbox를... -->
+    <!-- interminate = False 기본 값으로 설정 되어있다. value를 통해서 조작 가능.. -->
+    <h3 class="my-3 text-center">체크 리스트</h3>
+    {% for elements in result %}
+      {% for element in elements %}
+        <form action="{% url 'Todo:update' element.id %}">
+          <div class="fw-bold">
+            {% if element.completed == 1 %}
+            <button class="btn btn-light border-light px-1 py-0" id="checkinput" style="border-radius: .3rem;" value=""><i class="bi bi-check-lg text-center text-primary fw-bolder"></i></button>
+            <label class="fs-6 align-middle mx-2" for="checkinput">{{ element.content }}</label>
+            {% else %}
+            <button class="btn btn-light px-1 py-0" id="checkinput" style="border-radius: .3rem; width: 25.99px; height: 25.99px;"> <a href="{% url 'Todo:update' element.id %}"></a></button>
+            <label class="fs-6 align-middle mx-2" for="checkinput">{{ element.content }}</label>
+            {% endif %}
+          </div>
+          <hr>
+        </form>
+      {% endfor %}
+    {% endfor %}
+  </div>
+  <!-- view point 아이패드 부터 컴퓨터 크기 정도? -->
+  <div class="col-12 p-5 d-none d-md-block">
+    <table class="table text-center">
+      <thead class="fw-lighter" style="background-color: rgb(139, 190, 139);">
+        <tr>
+          <th scope="col" class="letter-space" style="width: 10rem;">우선 순위</th>
+          <th scope="col" class="letter-space">할 일 내용</th>
+          <th scope="col" class="letter-space" style="width: 14rem;">생성 날짜</th>
+          <th scope="col" class="letter-space" style="width: 14rem;">마감 기한</th>
+          <th scope="col" class="letter-space" style="width: 10rem;">진행 상태</th>
+          <th scope="col" class="letter-space" style="width: 14rem;">상태 변경</th>
+          <th scope="col" class="letter-space" style="width: 5rem;">삭제</th>
+        </tr>
+      </thead>
+      <tbody class="align-middle">
+        {% for elements in result %}
+          {% for element in elements %}
+          <tr class="text-center">
+            {% if element.completed == 1 %}
+            <td class="text-success fw-semibold">{{ element.priority }}</td>
+            <td class="text-success fw-semibold" style="width: 25rem;">{{ element.content }}</td>
+            <td class="text-success fw-semibold">{{ element.created_at| date:"Y-m-d" }}</td>
+            <td class="text-success fw-semibold">{{ element.deadline| date:"Y-m-d" }}</td>
+            <td><a href="{% url 'Todo:update' element.id %}">&#x1F646;</a></td>
+            <td style="width: 6rem;">&#x2705; 완료 !</td>
+            {% else %}
+            <td>{{ element.priority }}</td>
+            <td style="width: 25rem;">{{ element.content }}</td>
+            <td>{{ element.created_at| date:"Y-m-d" }}</td>
+            <td>{{ element.deadline| date:"Y-m-d" }}</td>
+            <td><a href="{% url 'Todo:update' element.id %}">&#x1F645;</a></td>
+            <td style="width: 6rem;">&#x274E; 언제 해 ?</td>
+            {% endif %}
+            <td><a href="{% url 'Todo:delete' element.id %}" class="text-dark"><i class="bi bi-x-lg" style="line-height: 1.5;"></i></a></td>
+          </tr>
+          {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>  
+</div>
+{% endblock %}
