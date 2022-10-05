@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+  <h3 class="text-primary">글 쓰기</h3>
+  <hr>
+  <form action="{% url 'community:create' %}" method="POST" class="fw-bolder">
+    {% csrf_token %}
+    {{ create_article.as_p }}
+    <div class="d-flex justify-content-end"><button type="submit" class="btn btn-primary text-end">글 등록</button></div>
+  </form>
+</div>
+{% endblock %}

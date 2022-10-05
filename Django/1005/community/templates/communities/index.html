@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container d-flex flex-column align-item-center my-5">
+  <h1 class="text-secondary">광렬 커뮤니티</h1>
+  <hr>
+  <a href="{% url 'community:new' %}" class="text-end text-dark fw-bolder">글 쓰기</a>
+  <hr>
+  {% for article in community %}
+  <div class="container bg-light p-4 rounded-3 mb-5">
+    <div class="d-flex justify-content-between align-items-center">
+      <p class="m-0">{{ article.title }}</p>
+      <a href="{% url 'community:delete' article.pk %}"><i class="bi bi-trash3"></i></a>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between align-items-center">
+      <p class="m-0">{{ article.content }}</p>
+      <a href="{% url 'community:update' article.pk %}" class="text-danger">수정하기</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
