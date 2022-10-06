@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+  {% for review in reviews %}
+    <div class="container">
+      <div class="">
+        <a class="btn fw-bolder p-0 align-middle" data-bs-toggle="collapse" data-bs-target="#cardopen">&#x1F37F;
+          {{ review.title }}</a>
+        <a class="" href="{% url 'movie:delete' review.pk %}">
+          <i class="bi bi-x-lg p-3 align-middle text-primary"></i>
+        </a>
+        <hr>
+        <div class="collapse" id="cardopen">
+          <div class="card card-body card-style card-style animate__animated animate__fadeIn">
+            {{ review.summary }}
+            <a class="text-decoration-none text-end" href="{% url 'movie:detail' review.pk %}">상세 보기</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+  {% endblock content %}

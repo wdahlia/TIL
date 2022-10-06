@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load bootstrap5 %}
+
+{% block nav %}{% endblock nav %}
+{% block content %}
+
+  <nav class="justify-content-center navbar navbar-expand-lg bg-light">
+    <div class="p-3">
+      <a class="navbar-brand" href="/"><img src="{% static 'image/logo.png' %}" class="brandlogo"></a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="d-flex justify-content-end">
+      <a class="nav-link active" href="/">
+        <i class="bi bi-house-door pe-3 fs-4"></i>
+      </a>
+    </div>
+  </div>
+  <div class="container fw-bolder text-light">
+    <form action="{% url 'movie:create' %}" method="POST" class="m-5">
+      {% csrf_token %}
+      {% bootstrap_form create_review %}
+      <div class="d-flex justify-content-center">
+        <input class="btn btn-dark my-3" type="submit" value="글 등록">
+      </div>
+    </form>
+  </div>
+
+{% endblock content %}

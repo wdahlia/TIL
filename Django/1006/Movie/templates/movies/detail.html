@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <div class="container bg-primary opacity-50 rounded-3 p-5 my-5">
+    <div class="text-white">
+      <h5>
+        {{ detail_movie.title }}</h5>
+      <div class="mt-2 text-white text-end fw-normal">
+        상영시간 :
+        {{ detail_movie.running_time }}분</div>
+      <hr>
+      <div class="fw-normal">{{ detail_movie.summary }}</div>
+    </div>
+  </div>
+
+{% endblock content %}

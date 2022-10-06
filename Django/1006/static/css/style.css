@@ -1,0 +1,17 @@
+
+
+/* nav */
+.brandlogo {
+  width: 10rem;
+  height: 4.25rem;
+}
+
+/* card */
+
+.card:hover {
+  transform: scale(1.08);
+}
+.card-style {
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.128);
+  letter-spacing: -.46px;
+}
