@@ -3,22 +3,25 @@
 {% load static %}
 {% block content %}
 
-  {% for review in reviews %}
-    <div class="container">
-      <div class="">
-        <a class="btn fw-bolder p-0 align-middle" data-bs-toggle="collapse" data-bs-target="#cardopen">&#x1F37F;
-          {{ review.title }}</a>
-        <a class="" href="{% url 'movie:delete' review.pk %}">
-          <i class="bi bi-x-lg p-3 align-middle text-primary"></i>
+  <div class="container px-5">
+    <h3 class="fw-normal opacity-50 ps-3">영화 목록</h3>
+    <hr class="pb-4">
+    {% for review in reviews %}
+      <button class="rounded-5 py-1 bg-white title-style d-flex align-items-center mx-0 my-3">
+        <div class="btn fw-bold m-0 align-middle border-0" data-bs-toggle="collapse" data-bs-target="#{{ review.en_title }}">&#x1F37F;
+          {{ review.title }}</div>
+        <a href="{% url 'movie:delete' review.pk %}">
+          <i class="bi bi-x-lg pe-3 align-middle text-primary"></i>
         </a>
-        <hr>
-        <div class="collapse" id="cardopen">
-          <div class="card card-body card-style card-style animate__animated animate__fadeIn">
-            {{ review.summary }}
-            <a class="text-decoration-none text-end" href="{% url 'movie:detail' review.pk %}">상세 보기</a>
-          </div>
+      </button>
+      <div class="collapse" id="{{ review.en_title }}">
+        <div class="card card-body rounded-4 p-4 card-style card-style text-wrap animate__animated animate__fadeIn">
+          {{ review.summary }}
+          <a class="text-decoration-none text-end text-hover" href="{% url 'movie:detail' review.pk %}">상세 보기</a>
         </div>
       </div>
-    {% endfor %}
 
-  {% endblock content %}
+    {% endfor %}
+  </div>
+
+{% endblock content %}

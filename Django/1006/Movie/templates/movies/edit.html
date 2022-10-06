@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load bootstrap5 %}
+
+{% block content %}
+
+  <div class="container fw-bolder text-light">
+    <form action="" method="POST" class="m-5">
+      {% csrf_token %}
+      {% bootstrap_form edit_mv %}
+      <div class="d-flex justify-content-center">
+        <input class="btn btn-dark my-3" type="submit" value="글 등록">
+      </div>
+    </form>
+  </div>
+
+{% endblock content %}

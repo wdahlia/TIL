@@ -4,15 +4,23 @@
 
 {% block content %}
 
-  <div class="container bg-primary opacity-50 rounded-3 p-5 my-5">
-    <div class="text-white">
+  <div class="animate__animated animate__pulse container detail-back rounded-3 px-5 pt-5 pb-4 my-5">
+    <div class="text-dark">
       <h5>
         {{ detail_movie.title }}</h5>
-      <div class="mt-2 text-white text-end fw-normal">
+      <h5 class="fw-light text-white">
+        <i>{{ detail_movie.en_title }}</i>
+      </h5>
+      <div class="mt-2 text-end fw-normal">
         상영시간 :
         {{ detail_movie.running_time }}분</div>
       <hr>
       <div class="fw-normal">{{ detail_movie.summary }}</div>
+    </div>
+    <div class="text-end">
+      <a href="{% url 'movie:edit' detail_movie.pk %}">
+        <button class="btn btn-dark">수정하기</button>
+      </a>
     </div>
   </div>
 

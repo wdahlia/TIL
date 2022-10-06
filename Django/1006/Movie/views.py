@@ -46,3 +46,21 @@ def detail(request, pk):
 
    return render(request, 'movies/detail.html', context)
    
+
+def edit(request, pk):
+    edit_movie = Movie.objects.get(pk=pk)
+
+    if request.method == "POST":
+        edit_mv = MovieForm(request.POST, instance=edit_movie)
+        if edit_mv.is_valid():
+            edit_mv.save()
+            return redirect('movie:index')
+        
+    else:
+        edit_mv = MovieForm(instance=edit_movie)
+    context = {
+        "edit_movie" : edit_movie,
+        "edit_mv" : edit_mv,
+    }
+
+    return render(request, 'movies/edit.html', context)

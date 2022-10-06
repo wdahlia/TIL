@@ -6,6 +6,11 @@
   height: 4.25rem;
 }
 
+
+.title-style {
+  border : 2px solid rgba(148, 142, 142, 0.903);
+  box-shadow : 4px 3px 4px rgba(148, 142, 142, 0.432);
+}
 /* card */
 
 .card:hover {
@@ -14,4 +19,14 @@
 .card-style {
   box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.128);
   letter-spacing: -.46px;
+}
+
+.text-hover:hover {
+  color : rgb(183, 195, 230);
+  font-weight : bolder;
+}
+
+
+.detail-back {
+  background-color: rgba(133, 172, 245, 0.807);
 }
