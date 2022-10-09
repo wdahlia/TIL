@@ -5,13 +5,6 @@ from .models import  Community
 # Create your views here.
 
 
-def new(request):
-    create_article = CommunityForm()
-    context = {
-        'create_article' : create_article,
-    }
-    return render(request, 'communities/new.html', context)
-
 def index(request):
     community = Community.objects.all()
     
@@ -34,8 +27,8 @@ def create(request):
 
     return render(request, 'communities/new.html', context)
 
-def delete(request, pk):
-    delete_article = Community.objects.get(pk=pk).delete()
+def delete(request, id):
+    Community.objects.get(pk=id).delete()
     return redirect('community:index')
 
 def update(request, pk):

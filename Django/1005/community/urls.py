@@ -5,8 +5,7 @@ app_name = 'community'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('new/', views.new, name='new'),
-    path('create/', views.create, name='create'),
-    path('delete/<int:pk>/', views.delete, name='delete'),
+    path('new/', views.create, name='create'),
+    path('delete/<int:id>/', views.delete, name='delete'),
     path('update/<int:pk>/', views.update, name='update'),
 ]
