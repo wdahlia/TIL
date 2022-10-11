@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+  <div class="container">
+
+    <form action="" method="POST" class="m-5 fw-semibold">
+      {% csrf_token %}
+      {% bootstrap_form signup_list %}
+      <div class="text-end">
+        <input type="submit" class="btn btn-dark" value="회원가입">
+      </div>
+    </form>
+  </div>
+
+{% endblock content %}

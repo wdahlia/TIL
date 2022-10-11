@@ -1,0 +1,16 @@
+
+/* nav */
+.img-size {
+  width: 10rem;
+  height: 4.5rem; 
+}
+
+
+.text-space { 
+  letter-spacing : -1px;
+}
+
+.site-size {
+  width : 100vw;
+  height : 100vh;
+}
