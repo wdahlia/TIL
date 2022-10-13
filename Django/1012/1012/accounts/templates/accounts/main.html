@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nav %}{% endblock nav %}
+{% block content %}
+
+  <div class="container site-size d-flex flex-column justify-content-center align-items-center">
+    <img src="{% static 'image/logo.png' %}" class="img-size mb-5">
+    <div>
+      <a href="signup/" class="me-5 text-decoration-none">
+        <div class="btn btn-light">회원 가입</div>
+      </a>
+      <a href="index/" class="text-decoration-none">
+        <div class="btn btn-warning border border-2 border-warning">회원 목록</div>
+      </a>
+    </div>
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,4 @@
+.venv
+venv
+secrets.json
+.DS_Store

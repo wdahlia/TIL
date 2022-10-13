@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container my-5 text-space">
+    <div class="border border-secondary rounded-3 p-4 bg-light">
+      <h1>{{ user_detail.username }}</h1>
+      <hr>
+      <h4 class="text-primary fw-light">
+        <i>{{ user_detail.email }}</i>
+      </h4>
+      <br>
+      {% if user_detail.last_login == NULL %}
+        <div class="list-group">
+          <a href="" class="list-group-item list-group-item-action fw-bolder">{{ user_detail.username }}의 정보
+          </a>
+          <a href="" class="list-group-item list-group-item-primary">최근 로그인 :
+          </a>
+          <a href="" class="list-group-item list-group-item-success">회원가입 :
+            {{ user_detail.date_joined }}</a>
+        </div>
+      {% else %}
+        <div class="list-group">
+          <a href="" class="list-group-item list-group-item-action">{{ user_detail.username }}의 정보
+          </a>
+          <a href="" class="list-group-item list-group-item-primary">최근 로그인 :
+            {{ user_detail.last_login }}</a>
+          <a href="" class="list-group-item list-group-item-success">회원가입 :
+            {{ user_detail.date_joined }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock content %}
