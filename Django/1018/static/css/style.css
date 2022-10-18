@@ -1,0 +1,65 @@
+.card-style {
+  border: 1rem solid rgba(177, 193, 202, 0.174);
+  background-color: rgba(244, 248, 250, 0.381);
+}
+
+.card-style:hover {
+  transform: translate(0,-10px);
+}
+
+.background-size {
+  width : 100vw;
+  height : auto;
+  background: url(../image/newjeans.png) no-repeat center;
+  filter: brightness(80%);
+  background-size: cover;
+}
+
+.background-view {
+  width: 100vw;
+  height: 100vh;
+}
+
+.img-hover:hover {
+  transform: scale(1.23);
+}
+
+.container-color {
+  background-color: #b0dafb34;
+  border: 2px solid #323a4137;
+}
+
+.form-style {
+  background-color: #dde0e347;
+}
+
+.img-size {
+  width: 10rem;
+  height: 10rem;
+}
+
+.icon-size { 
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.detail-img-size {
+  width: 10rem;
+  height: 5rem;
+}
+
+.text-size {
+  font-size: 90px;
+}
+
+.comment-icon-size {
+  width: 2rem;
+  height: 2rem;
+}
+
+.form-style {
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}

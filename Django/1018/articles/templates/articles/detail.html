@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="background-view px-3 py-5">
+    <div class="px-3 container card form-style border border-3 p-0 shadow-lg">
+      <h1 class="text-white text-center mt-3 text-size">
+        <i>{{ article_detail.title }}</i>
+      </h1>
+      <div class="text-end">
+        <p class="fw-lighter m-0">글 생성일 :
+          {{ article_detail.created_at }}
+        </p>
+        <p class="fw-lighter">마지막 수정일 :
+          {{ article_detail.updated_at }}</p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <img src="{% static 'image/rabbit.png' %}" class="comment-icon-size">
+        <form action="" method="POST" class="d-flex">
+          {% csrf_token %}
+          {% bootstrap_form comment_form layout='inline'%}
+          <input type="submit" class="btn btn-none p-0 rounded-5" value="&#10004;">
+        </form>
+      </div>
+      <div class="d-flex justify-content-center">
+        {% for comment in comments %}
+          <hr>
+          <p>{{ comment.content }}</p>
+        {% endfor %}
+      </div>
+      <div class="card-img-top text-center p-3">
+        <img src="{{ article_detail.image.url }}" class="w-75 border border-3 border-dark rounded-3">
+      </div>
+      <hr>
+      <pre class="text-center">{{ article_detail.content }}</pre>
+    </div>
+  </div>
+{% endblock content %}

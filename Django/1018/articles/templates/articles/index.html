@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <div class="background-view">
+    <div class="container-fluid text-center">
+      <a href="{% url 'articles:create' %}">
+        <img src="{% static 'image/rabbit.png' %}" class="img-size">
+      </a>
+    </div>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3">
+        {% for newjeans in card_list %}
+          <div class="container my-3">
+            <div class="col card rounded-5 my-3 px-0 h-100 card-style shadow-lg">
+              {% if newjeans.thumbnail %}
+                <img src="{{ newjeans.thumbnail.url }}" class="card-img-top rounded-5 shadow opacity-75" alt="">
+              {% else %}
+                <img src="{% static 'image/900x500.png' %}" class="card-img-top rounded-5" alt="">
+              {% endif %}
+              <div class="card-body rounded-5 text-center align-middle">
+                <a href="{% url 'articles:detail' newjeans.pk %}" class="text-white text-decoration-none opacity-75 pt-0 pb-1">
+                  <h3 class="fw-border m-0">
+                    <i class="text-center align-middle">&#10024;{{ newjeans.title }}</i>
+                  </h3>
+                </a>
+                <a href="{% url 'articles:delete' newjeans.pk %}" class="text-end position-absolute top-0 end-0 opacity-50"><img src="{% static 'image/trash.png' %}" class="icon-size"></a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endblock content %}
