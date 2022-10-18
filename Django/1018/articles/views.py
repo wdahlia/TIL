@@ -9,7 +9,7 @@ from .forms import ArticleForm, CommentForm
 
 @login_required
 def index(request):
-    card_list = Article.objects.order_by('-id')
+    card_list = Article.objects.all()
     
     context = {
         'card_list' : card_list,
@@ -34,6 +34,7 @@ def create(request):
         
     return render(request, 'articles/create.html', context)
 
+@login_required
 def detail(request, pk):
     article_detail = Article.objects.get(pk=pk)
     comment_form = CommentForm()
@@ -46,11 +47,13 @@ def detail(request, pk):
 
     return render(request, 'articles/detail.html', context)
 
+@login_required
 def delete(request, pk):
     Article.objects.get(pk=pk).delete()
     
     return redirect('articles:index')
 
+@login_required
 def update(request, pk):
     article_update = Article.objects.get(pk=pk)
     if request.method == "POST":
@@ -63,7 +66,7 @@ def update(request, pk):
         update_form = ArticleForm(instance=article_update)
 
     context = {
-        'update_form' : update_form
+        'update_form' : update_form,
     }
 
     return render(request, 'articles/edit.html', context)
@@ -78,3 +81,9 @@ def comments_create(request, pk):
         comment.save()
 
     return redirect('articles:detail', article.pk)
+
+
+@login_required
+def comments_delete(request, article_pk, comment_pk):
+    Comment.objects.get(pk=comment_pk).delete()
+    return redirect('articles:detail', article_pk)

@@ -15,22 +15,58 @@
         <p class="fw-lighter">마지막 수정일 :
           {{ article_detail.updated_at }}</p>
       </div>
-      <div class="d-flex justify-content-center">
-        <img src="{% static 'image/rabbit.png' %}" class="comment-icon-size">
-        <form action="" method="POST" class="d-flex">
-          {% csrf_token %}
-          {% bootstrap_form comment_form layout='inline'%}
-          <input type="submit" class="btn btn-none p-0 rounded-5" value="&#10004;">
-        </form>
+      <div class="text-end">
+        <a href="{% url 'articles:update' article_detail.pk %}" class="text-decoration-none btn btn-warning fw-light opacity-75">
+          글 수정
+        </a>
       </div>
       <div class="d-flex justify-content-center">
+        <img src="{% static 'image/rabbit.png' %}" class="comment-icon-size">
+        <form action="{% url 'articles:comments_create' article_detail.pk %}" method="POST" class="d-flex w-50">
+          {% csrf_token %}
+          {% bootstrap_form comment_form layout='inline'%}
+          <input type="submit" class="btn btn-none p-0 rounded-5 border-0" value="&#10004;">
+        </form>
+      </div>
+      <a class="mt-4 text-decoration-none text-dark" data-bs-toggle="collapse" href="#collapseComment" role="button" aria-expanded="false">
+        <div class="text-center">
+          <h5 class="fw-bolder btn btn-outline-light mb-0 border-0 position-relative">
+            <i>Comments</i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+              {{ comments.count }}</span>
+          </h5>
+          <p class="comment-text-size mb-0">댓글을 모두 확인하려면 C L I C K !</p>
+        </div>
+      </a>
+      <div class="collapse" id="collapseComment">
         {% for comment in comments %}
           <hr>
-          <p>{{ comment.content }}</p>
+          <div class="container bg-light rounded-2 shadow-lg px-3 py-2 border border-dark border-2">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                <img src="{% static 'image/rabbit.png' %}" class="comment-icon-size">
+                <p class="mx-2 mb-0">{{ request.user }}</p>
+              </div>
+              <div>
+                <!-- 댓글 삭제 -->
+                <form action="{% url 'articles:comments_delete' article_detail.pk comment.pk %}" method="POST" class="ms-3 text-decoration-none text-danger">
+                  {% csrf_token %}
+                  <button class="btn btn-none border-0" type="submit"><img src="{% static 'image/trash.png' %}" class="icon-size"></button>
+                </form>
+              </div>
+            </div>
+            <hr class="mt-2 mb-0">
+            <p class="pt-2 mb-0 align-middle">{{ comment.content }}</p>
+            <p class="text-end mb-0 comment-text-size">{{ comment.created_at }}</p>
+          </div>
         {% endfor %}
       </div>
       <div class="card-img-top text-center p-3">
-        <img src="{{ article_detail.image.url }}" class="w-75 border border-3 border-dark rounded-3">
+        {% if article_detail.image %}
+          <img src="{{ article_detail.image.url }}" class="w-75 border border-3 border-dark rounded-3">
+        {% else %}
+          <img src={% static 'image/1500x1000.png' %} class="w-75 border border-3 border-dark rounded-3">
+        {% endif %}
       </div>
       <hr>
       <pre class="text-center">{{ article_detail.content }}</pre>

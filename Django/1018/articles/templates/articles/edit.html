@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="container py-4">
+    <form action="" method="POST" enctype="multipart/form-data" class="text-white mb-0">
+      {% csrf_token %}
+      {% bootstrap_form update_form %}
+      <div class="text-end">
+        <input type="submit" class="btn btn-dark" value="수정">
+      </div>
+    </form>
+  </div>
+{% endblock content %}

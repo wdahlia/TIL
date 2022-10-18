@@ -16,7 +16,7 @@
               {% if newjeans.thumbnail %}
                 <img src="{{ newjeans.thumbnail.url }}" class="card-img-top rounded-5 shadow opacity-75" alt="">
               {% else %}
-                <img src="{% static 'image/900x500.png' %}" class="card-img-top rounded-5" alt="">
+                <img src="{% static 'image/1500x1000.png' %}" class="card-img-top rounded-5" alt="">
               {% endif %}
               <div class="card-body rounded-5 text-center align-middle">
                 <a href="{% url 'articles:detail' newjeans.pk %}" class="text-white text-decoration-none opacity-75 pt-0 pb-1">
