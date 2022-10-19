@@ -53,12 +53,26 @@
 }
 
 .comment-icon-size {
-  width: 2rem;
-  height: 2rem;
+  width: 1.89rem;
+  height: 1.89rem;
 }
 
 .comment-text-size {
-  font-size: 7px;
+  font-size: 15px;
   letter-spacing: -1px;
 }
 
+
+.card-bg-color {
+  background-color: rgba(199, 216, 247, 0.129);
+  border: 3px solid black;
+}
+
+.form-control:focus,.form-control:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.date-size {
+  font-size: 15px;
+}

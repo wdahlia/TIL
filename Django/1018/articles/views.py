@@ -9,7 +9,7 @@ from .forms import ArticleForm, CommentForm
 
 @login_required
 def index(request):
-    card_list = Article.objects.all()
+    card_list = Article.objects.order_by('-id')
     
     context = {
         'card_list' : card_list,
@@ -22,7 +22,9 @@ def create(request):
     if request.method == "POST":
         create_form = ArticleForm(request.POST, request.FILES)
         if create_form.is_valid():
-            create_form.save()
+            article = create_form.save(commit=False)
+            article.user = request.user
+            article.save()
             messages.success(request, '글 작성 완료!')
             return redirect('articles:index')
     else:
@@ -77,6 +79,7 @@ def comments_create(request, pk):
     comment_form = CommentForm(request.POST)
     if comment_form.is_valid():
         comment = comment_form.save(commit=False)
+        comment.user = request.user
         comment.article = article
         comment.save()
 
@@ -85,5 +88,27 @@ def comments_create(request, pk):
 
 @login_required
 def comments_delete(request, article_pk, comment_pk):
-    Comment.objects.get(pk=comment_pk).delete()
+    comment = Comment.objects.get(pk=comment_pk)
+    if comment.user == request.user:
+        comment.delete()
     return redirect('articles:detail', article_pk)
+
+@login_required
+def comments_edit(request, article_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    
+    if request.method == "POST":
+        comment_edit = CommentForm(request.POST, instance=comment)
+        if comment.user == request.user:
+            if comment_edit.is_valid():
+                comment_edit.save()
+                return redirect('articles:detail', article_pk)
+    else:
+        comment_edit = CommentForm(instance=comment)
+ 
+    context = {
+        'comment_edit' : comment_edit,
+    }
+
+    return render(request, 'articles/detail.html', context)
+

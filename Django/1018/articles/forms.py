@@ -23,9 +23,9 @@ class CommentForm(forms.ModelForm):
         }
         widgets = {
             'content' : TextInput(attrs={
-                'class' : 'border-0 border-bottom border-1 border-dark rounded-0',
+                'class' : 'border-0 border-bottom border-1 border-dark rounded-0 mx-1',
                 'style' : 'background: transparent;',
-                'placeholder' : '댓글을 입력해주세요'
+                'placeholder' : '댓글을 입력해주세요',
             }),
         }
         

@@ -8,6 +8,11 @@
       <h1 class="text-white text-center mt-3 text-size">
         <i>{{ article_detail.title }}</i>
       </h1>
+      <div class="d-flex justify-content-center">
+        <div class="text-center badge bg-light text-black py-2 px-4 fw-semibold border border-2 border-dark lh-1">
+          <i>{{ article_detail.user }}</i>
+        </div>
+      </div>
       <div class="text-end">
         <p class="fw-lighter m-0">글 생성일 :
           {{ article_detail.created_at }}
@@ -25,7 +30,7 @@
         <form action="{% url 'articles:comments_create' article_detail.pk %}" method="POST" class="d-flex w-50">
           {% csrf_token %}
           {% bootstrap_form comment_form layout='inline'%}
-          <input type="submit" class="btn btn-none p-0 rounded-5 border-0" value="&#10004;">
+          <input type="submit" class="btn btn-none p-0 rounded-5 border-0 ms-2" value="&#10004;">
         </form>
       </div>
       <a class="mt-4 text-decoration-none text-dark" data-bs-toggle="collapse" href="#collapseComment" role="button" aria-expanded="false">
@@ -40,25 +45,64 @@
       </a>
       <div class="collapse" id="collapseComment">
         {% for comment in comments %}
-          <hr>
-          <div class="container bg-light rounded-2 shadow-lg px-3 py-2 border border-dark border-2">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center">
-                <img src="{% static 'image/rabbit.png' %}" class="comment-icon-size">
-                <p class="mx-2 mb-0">{{ request.user }}</p>
+          {% if request.method == "GET" %}
+            <hr>
+            <div class="container bg-light rounded-2 shadow-lg px-3 py-2 border border-dark border-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                  <img src="{% static 'image/rabbit.png' %}" class="comment-icon-size">
+                  <p class="mx-2 mb-0">{{ comment.user }}</p>
+                </div>
+                <div>
+                  <div class="d-flex align-items-center">
+                    <!-- 댓글 수정 -->
+                    <form action="" method="POST" class="text-decoration-none">
+                      {% if comment.user == request.user %}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-none border-0 align-middle">
+                          <i class="bi bi-pencil-square fs-3"></i>
+                        </button>
+                      {% endif %}
+                    </form>
+                    <!-- 댓글 삭제 -->
+                    <form action="{% url 'articles:comments_delete' article_detail.pk comment.pk %}" method="POST" class="ms-3 text-decoration-none text-danger">
+                      {% csrf_token %}
+                      {% if comment.user == request.user %}
+                        <button class="btn btn-none p-0 border-0 align-middle" type="submit"><img src="{% static 'image/trash.png' %}" class="comment-icon-size"></button>
+                      {% endif %}
+                    </form>
+                  </div>
+                </div>
               </div>
-              <div>
-                <!-- 댓글 삭제 -->
-                <form action="{% url 'articles:comments_delete' article_detail.pk comment.pk %}" method="POST" class="ms-3 text-decoration-none text-danger">
-                  {% csrf_token %}
-                  <button class="btn btn-none border-0" type="submit"><img src="{% static 'image/trash.png' %}" class="icon-size"></button>
-                </form>
-              </div>
+              <hr class="my-2 mb-0">
+              <p class="pt-2 mb-0 align-middle">{{ comment.content }}</p>
+              <p class="text-end mb-0 comment-text-size">{{ comment.created_at }}</p>
             </div>
-            <hr class="mt-2 mb-0">
-            <p class="pt-2 mb-0 align-middle">{{ comment.content }}</p>
-            <p class="text-end mb-0 comment-text-size">{{ comment.created_at }}</p>
-          </div>
+          {% else %}
+            <hr>
+            <div class="container bg-light rounded-2 shadow-lg px-3 py-2 border border-dark border-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                  <img src="{% static 'image/rabbit.png' %}" class="comment-icon-size">
+                  <p class="mx-2 mb-0">{{ comment.user }}</p>
+                </div>
+              </div>
+              <hr>
+              {% if request.user.pk == comment.user.pk %}
+                <form action="{% url 'articles:comments_edit' article_detail.pk comment.pk %}" method="POST" class="">
+                  {% csrf_token %}
+                  {% bootstrap_form comment_form %}
+                  <div class="text-end">
+                    <button type="submit" class="btn btn-dark">제출</button>
+                  </div>
+                </form>
+
+              {% else %}
+                <p class="pt-2 my-2 mb-0 align-middle">{{ comment.content }}</p>
+                <p class="text-end mb-0 comment-text-size">{{ comment.created_at }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
       <div class="card-img-top text-center p-3">

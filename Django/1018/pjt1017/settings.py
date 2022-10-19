@@ -158,3 +158,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # 미디어를 처리하는 URL
 # 업로드 된 파일의 주소를 만들어주는 역할
 MEDIA_URL = '/media/'
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'

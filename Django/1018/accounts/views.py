@@ -4,6 +4,7 @@ from .forms import UserCreateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
+from articles.models import Article, Comment
 # Create your views here.
 
 def login(request):
@@ -42,3 +43,16 @@ def logout(request):
     auth_logout(request)
     messages.warning(request, 'Bye!')
     return redirect('accounts:login')
+
+
+@login_required
+def detail(request, user_pk):
+    article_list = Article.objects.filter(user_id=user_pk)
+    comment_list = Comment.objects.filter(user_id=user_pk)
+
+    context = {
+        'article_list' : article_list,
+        'comment_list' : comment_list,
+    }
+
+    return render(request, 'accounts/profile.html', context)

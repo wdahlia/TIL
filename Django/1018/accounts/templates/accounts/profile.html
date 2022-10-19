@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="mt-5 container row-cols-1 d-flex">
+    <div class="card card-bg-color p-3">
+      <div class="card-body">
+        <div class="text-size fw-bolder px-3 text-center" style="letter-spacing: -2px;">
+          <i>{{ request.user }}</i>
+        </div>
+        <br>
+        <div class="d-flex justify-content-between">
+          <a class="border-0 text-decoration-none text-dark d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArticleList" aria-expanded="false">
+            <div class="vr px-1"></div>
+            <h5 class="fw-bolder m-0 ms-2">내가 쓴 글</h5>
+          </a>
+          <div class="text-end badge bg-primary">
+            <span class="align-middle">{{ article_list.count }}</span>
+          </div>
+        </div>
+        <hr>
+        <div class="collapse" id="collapseArticleList">
+          {% for article in article_list %}
+            <div class="container bg-light rounded-2 border border-dark border-1 shadow-lg py-2 px-3">
+              <h5 class="m-0 py-1">
+                <a href="{% url 'articles:detail' article.pk %}" class="text-decoration-none">
+                  {{ article.title }}
+                </a>
+              </h5>
+              <hr class="my-2">
+              <p class="date-size m-0 fw-light text-secondary">{{ article.created_at }}
+                |
+                {{ article.updated_at }}
+              </p>
+            </div>
+            <hr>
+          {% endfor %}
+        </div>
+        <!-- 댓글 -->
+        <div class="d-flex justify-content-between">
+          <a class="border-0 text-decoration-none text-dark d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCommentList" aria-expanded="false">
+            <div class="vr px-1"></div>
+            <h5 class="fw-bolder m-0 ms-2">내가 쓴 댓글</h5>
+          </a>
+          <div class="text-end badge bg-primary">
+            <span class="align-middle">{{ comment_list.count }}</span>
+          </div>
+        </div>
+        <hr>
+        <div class="collapse" id="collapseCommentList">
+          {% for comment in comment_list %}
+            <div class="container rounded-2 border border-dark border-1 shadow-lg py-2 px-3">
+
+              <h5 class="mt-2 mb-0">
+                <a href="{% url 'articles:detail' comment.article_id %}" class="text-decoration-none text-dark">{{ comment.content }}</a>
+              </h5>
+
+              <hr class="my-2">
+              <p class="date-size m-0 fw-light text-light">{{ comment.created_at }}
+              </p>
+            </div>
+            <hr>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  {% endblock content %}

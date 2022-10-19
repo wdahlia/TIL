@@ -22,11 +22,18 @@
     {% block nav %}
       <nav class="navbar navbar-expand-lg bg-none">
         <div class="container-fluid justify-content-between bg-none">
-          <a class="navbar-brand" href="{% url 'articles:index' %}"><img src="{% static 'image/logo.png' %}" style="width: 150px;"></a>
+          <div class="align-middle">
+            <a class="navbar-brand" href="{% url 'accounts:login' %}"><img src="{% static 'image/logo.png' %}" style="width: 140px; height: 30px;"></a>
+            <a href="{% url 'articles:index' %}" class="text-decoration-none">
+              <i class="bi bi-house-fill fs-3 align-middle text-white"></i>
+            </a>
+          </div>
           {% if request.user.is_authenticated %}
             <div class="align-middle">
-              <span class="text-white fw-lighter">{{ user }}님</span>
-              <a href="{% url 'accounts:logout' %}" class="text-white fw-bolder text-decoration-none">&#128075 B y e !</a>
+              <span class="text-white fw-lighter">
+                <a href="{% url 'accounts:detail' user.pk %}" class="text-decoration-none text-light">{{ user }}님</a>
+              </span>
+              <a href="{% url 'accounts:logout' %}" class="text-white fw-bolder text-decoration-none me-4">&#128075 B y e !</a>
             </div>
           {% endif %}
         </div>
@@ -34,6 +41,12 @@
     </nav>
 
   {% endblock nav %}
+
+  {% if messages %}
+    {% for message in messages %}
+      <div {% if message.tags %} class="text-center bg-none opacity-75 py-3 my-3 fs-5" {% endif %}>{{ message }}</div>
+    {% endfor %}
+  {% endif %}
   {% block content %}{% endblock content %}
 
   <!-- javascript -->
