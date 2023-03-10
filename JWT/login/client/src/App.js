@@ -1,4 +1,5 @@
 import './App.css';
+import Login from './components/Login/Login'
 
 function App() {
   return (
@@ -21,18 +22,6 @@ export function GetToken({ name }) {
     </div>
   );
 }
-
-
-export function Login() {
-  return (
-    <form className='form'>
-      <input id='email' className='email' type='email' placeholder='Email' />
-      <input id='pwd' className='pwd' type='password' placeholder='Password' /> 
-      <input type="submit" value="login" className='submit'/>
-    </form>
-  );
-}
-
 
 
 

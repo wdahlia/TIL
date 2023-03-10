@@ -1,0 +1,36 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  row-gap: 20px;
+}
+
+.form .email,
+.form .pwd {
+  width: 80%;
+  padding: 1rem 0.8rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 2px solid #81bcfb7d;
+}
+
+.form .submit {
+  background-color: #81bcfb;
+  padding: 1rem;
+  width: 60%;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  color: rgb(237, 245, 254);
+  font-size: 1.1rem;
+}
+
+.form .submit:hover {
+  background-color: #287eff;
+}
+
