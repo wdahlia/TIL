@@ -1,0 +1,42 @@
+// express 서버 구현
+const express = require(`express`);
+const dotenv = require(`dotenv`);
+const cookieParser = require(`cookie-parser`);
+const cors = require(`cors`);
+const {
+  login,
+  accessToken,
+  refreshToken,
+  loginSuccess,
+  logout
+} = require('./controller')
+
+const app = express();
+dotenv.config();
+
+// 기본 설정
+// client 와 server 간의 통신을 위해 JSON 형식의 파일을 다뤄야함
+app.use(express.json());
+// express 내부에 있는 미들웨어인 express.json()을 설치
+
+// 쿠키를 사용해서 JSON 웹 토큰을 사용할 것이기 때문에
+app.use(cookieParser());
+
+// 클라이언트에서 서버간 오리진이 다른상황에서 통신을 하기 위해서
+app.use(cors({
+  origin : 'http://localhost:3000',
+  methods : ['GET', 'POST'],
+  // 사용자와 서버간의 통신에서 cookie를 이용하여 통신할 것이기 때문에
+  credentials : true,
+}))
+
+app.post('/login', login);
+app.get('/accesstoken', accessToken);
+app.get('/refreshtoken', refreshToken);
+app.get('/login/success', loginSuccess);
+app.post('/logout', logout); // access token 제거
+
+// app에 port 연결
+app.listen(process.env.PORT, () => {
+  console.log(`server is on ${process.env.PORT}`);
+})
