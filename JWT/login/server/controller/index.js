@@ -1,35 +1,21 @@
-const userDataBase = require('../Database');
-const jwt = require('jsonwebtoken');
+const userDatabase = require("../Database");
+const jwt = require("jsonwebtoken");
 
-// login
-const login = (req, res) => {
+// https://www.npmjs.com/package/jsonwebtoken
+// JsonWebToken
 
-}
+const login = (req, res, next) => {
+  const { email, password } = req.body;
 
-// accesstoken
-const accessToken = (req, res) => {
+  const userInfo = userDatabase.filter((item) => {
+    return item.email === email;
+  })[0];
 
-}
+  if (!userInfo) {
+    // userInfo가 아니면 403 error 발생, JSON으로 Not Authorized
+    res.status(403).json("Not Authorized");
+  }
+};
 
-// refresh token
-const refreshToken = (req, res) => {
 
-}
-
-// login success시
-const loginSuccess = (req, res) => {
-
-}
-
-// logout
-const logout = (req, res) => {
-
-}
-
-module.exports = {
-  login,
-  accessToken,
-  refreshToken,
-  loginSuccess,
-  logout
-}
+module.exports = login;
