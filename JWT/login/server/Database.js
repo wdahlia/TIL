@@ -21,5 +21,10 @@ module.exports = [
       username : 'testuser4',
       email : 'testuser4@gmail.com',
       password : '4444'
+  },{
+      id : 5,
+      username : 'dahlia',
+      email : 'testuser5@gmail.com',
+      password : '5555'
   }
 ]
