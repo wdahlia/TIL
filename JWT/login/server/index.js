@@ -3,7 +3,11 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const login = require("./controller");
+const {
+  login,
+  getAccessToken,
+  getRefreshToken
+ } = require("./controller");
 
 const app = express();
 dotenv.config();
@@ -31,6 +35,8 @@ app.use(
 // 다른 도메인(Cross Origin)에 요청 보낼 때 요청에 인증 정보를 담아서 보낼지를 결정하는 항목
 
 app.post("/login", login);
+app.get("/accesstoken", getAccessToken);
+app.get("/refreshtoken", getRefreshToken);
 // access token 제거
 
 // app에 port 연결

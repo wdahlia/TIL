@@ -24,7 +24,7 @@ export default function Login() {
       console.log(result);
     }).catch((error) => {
       console.log('실패');
-      console.log(error.response.data);
+      console.log(error.response);
     })
   };
 

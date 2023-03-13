@@ -59,6 +59,8 @@ const login = (req, res, next) => {
 
       // Token 전송
       // res.cookie(name, value [, options])
+      // httpOnly와 secure을 사용하여 쿠키에 저장하였기 때문에 CSRF 공격에 어느정도 보안할 수 있는 상태
+      // local Storage와 db서버에 refreshToken 저장하는 방법도 있음
       res.cookie('accessToken', accessToken, {
         secure : false,
         // https인지 http인지 명시
@@ -74,7 +76,6 @@ const login = (req, res, next) => {
       });
 
       res.status(200).json('로그인 성공');
-
       
     } catch (error) {
       // 예외의 경우 지정
@@ -83,5 +84,53 @@ const login = (req, res, next) => {
   }
 };
 
+const getAccessToken = (req, res) => {
+  try {
+    const token = req.cookies.accessToken;
+    const data = jwt.verify(token, process.env.ACCESS_SECRET);
+    const { password, ...others } = data;
 
-module.exports = login;
+    res.status(200).json(others);
+
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+const getRefreshToken = (req, res) => {
+  try {
+    const token = req.cookies.refreshToken;
+    const data = jwt.verify(token, process.env.REFRESH_SECRET);
+    const { password, ...others } = data;
+    
+    // accessToken 재발급
+    const accessToken = jwt.sign({
+      id : data.id,
+      username : data.username,
+      email : data.email,
+    }, process.env.ACCESS_SECRET, {
+      expiresIn : '1m',
+      issuer : 'Jinsook Ryu',
+    });
+
+    // accessToken 전송
+    res.cookie('accessToken', accessToken, {
+      secure : false,
+      // https인지 http인지 명시
+      httpOnly : true,
+      // javascript에서 쿠키 접근 불가능하게 하려면 true 값 설정하면 됨
+    });
+
+    res.status(200).json(data);
+
+    // token 받고 이제 
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+module.exports = {
+  login,
+  getAccessToken,
+  getRefreshToken,
+}
