@@ -1,9 +1,10 @@
 import './App.css';
 import axios from 'axios';
 import Login from './components/Login/Login'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [login, setIsLogin] = useState(false);
   const [user, setUser] = useState({
     email : '',
     iss : '',
@@ -11,7 +12,6 @@ function App() {
   });
 
   const handleAccess = () => {
-
     axios({
       url : 'http://localhost:8123/accesstoken',
       method : 'GET',
@@ -35,12 +35,59 @@ function App() {
     });
   };
 
+  useEffect(() => {
+    try {
+      axios({
+        url: "http://localhost:8123/login/success",
+        method: "GET",
+        withCredentials: true,        
+      }).then((res) => {
+        if (res.data) {
+          setIsLogin(true);
+          setUser({
+            email : res.data.email,
+            iss : res.data.iss,
+            username : res.data.username,
+          });
+        };
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+
+    axios({
+      url: "http://localhost:8123/logout",
+      method: "POST",
+      withCredentials: true,
+    }).then(() => {
+      setIsLogin(!login);
+      setUser({
+        email : '',
+        iss : '',
+        username : '',
+      });
+    })
+  };
+
   return (
     <>
       <GetToken name='getAccessToken' getToken={handleAccess} user={user} />
       <GetToken name='getRefreshToken' getToken={handleRefresh} />
       <div className='box'>
-        <Login />
+        { login ? 
+        (<form className='logoutBox'>
+          <p className='title'><span className='name'>{user.username}</span> 님</p>
+          <p className='title'>{user.email}</p>
+          <button
+          type='button'
+          className='logout'
+          onClick={handleLogout}>Logout</button>
+        </form>) : <Login login={login} setIsLogin={setIsLogin}/>
+        }
       </div>
     </>
   );

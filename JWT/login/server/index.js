@@ -6,7 +6,9 @@ const cors = require("cors");
 const {
   login,
   getAccessToken,
-  getRefreshToken
+  getRefreshToken,
+  loginSuccess,
+  logout,
  } = require("./controller");
 
 const app = express();
@@ -37,6 +39,8 @@ app.use(
 app.post("/login", login);
 app.get("/accesstoken", getAccessToken);
 app.get("/refreshtoken", getRefreshToken);
+app.get("/login/success", loginSuccess);
+app.post("/logout", logout);
 // access token 제거
 
 // app에 port 연결

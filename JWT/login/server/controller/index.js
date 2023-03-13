@@ -88,7 +88,12 @@ const getAccessToken = (req, res) => {
   try {
     const token = req.cookies.accessToken;
     const data = jwt.verify(token, process.env.ACCESS_SECRET);
-    const { password, ...others } = data;
+
+    const userData = userDatabase.filter(item => {
+      return item.email === data.email;
+    })[0];
+
+    const { password, ...others } = userData;
 
     res.status(200).json(others);
 
@@ -101,13 +106,17 @@ const getRefreshToken = (req, res) => {
   try {
     const token = req.cookies.refreshToken;
     const data = jwt.verify(token, process.env.REFRESH_SECRET);
-    const { password, ...others } = data;
+
+    const userData = userDatabase.filter(item => {
+      return item.email === data.email;
+    })[0];
+
     
     // accessToken 재발급
     const accessToken = jwt.sign({
-      id : data.id,
-      username : data.username,
-      email : data.email,
+      id : userData.id,
+      username : userData.username,
+      email : userData.email,
     }, process.env.ACCESS_SECRET, {
       expiresIn : '1m',
       issuer : 'Jinsook Ryu',
@@ -129,8 +138,37 @@ const getRefreshToken = (req, res) => {
   }
 };
 
+const loginSuccess = (req, res) => {
+  try {
+    // login이 되었는지 안되었는지를 확인해주어야함
+    const token = req.cookies.accessToken;
+    const data = jwt.verify(token, process.env.ACCESS_SECRET);
+
+    const userData = userDatabase.filter(item => {
+      return item.email === data.email;
+    })[0];
+
+    res.status(200).json(userData);
+
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+const logout = (req, res) => {
+  try {
+    // cookie 지우는 방식
+    res.cookie('accessToken', '');
+    res.status(200).json('logout success');
+  } catch (error) {
+    res.status(500).json(error);
+  }
+}
+
 module.exports = {
   login,
   getAccessToken,
   getRefreshToken,
+  loginSuccess,
+  logout,
 }
